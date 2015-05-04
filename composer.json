@@ -17,7 +17,7 @@
 		],
 		"psr-4": {
 			"App\\": "app/",
-			"Batango\\": "vendor/batango/"
+			"Batango\\": "batango/"
 		}
 	},
 	"autoload-dev": {
