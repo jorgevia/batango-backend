@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Database\Seeder;
-use \App\models\Magazine;
+use \Batango\entities\Magazine;
 
 class MagazinesTableSeeder extends Seeder {
 

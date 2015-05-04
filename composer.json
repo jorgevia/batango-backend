@@ -17,7 +17,7 @@
 		],
 		"psr-4": {
 			"App\\": "app/",
-			"Bazzoloviale\\": "vendor/bazzoloviale/"
+			"Batango\\": "vendor/batango/"
 		}
 	},
 	"autoload-dev": {

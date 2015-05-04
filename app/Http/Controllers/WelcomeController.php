@@ -1,6 +1,5 @@
 <?php namespace App\Http\Controllers;
-use \Laravelrus\LocalizedCarbon\Traits\LocalizedEloquentTrait;
-use \App\models\Magazine;
+use \Batango\entities\Magazine;
 use \Carbon\Carbon;
 
 
@@ -34,7 +33,7 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-        $magazines = Magazine::all()->toArray();
+        $magazines = Magazine::all();
         return view('batango.bat', compact('magazines'));
 	}
 

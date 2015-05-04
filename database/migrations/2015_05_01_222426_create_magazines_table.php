@@ -22,7 +22,7 @@ class CreateMagazinesTable extends Migration {
             //Media will be managed by another table (tapa, pdfs)
 
             // Timestamps
-            $table->primary('issue');
+            $table->primary('issue'); //Set primary key for issue property
             $table->timestamps();
         });
 	}
