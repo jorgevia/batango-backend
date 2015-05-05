@@ -15,20 +15,20 @@ class CreateArticlesTable extends Migration {
 		Schema::create('articles', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->smallInteger('section_id');
-            $table->string('magazine_Id');
-            $table->string('title', 255);
-            $table->mediumText('description'); //a short description to reference in the page
-            $table->string('page_number'); //Which page is the article located
-            $table->string('picture_url'); //picture
+            $table->integer('section_id')->unsigned();
+            $table->integer('magazine_id')->unsigned();
+            $table->string('title', 255)->index();
+            $table->mediumText('description')->nullable(); //a short description to reference in the page
+            $table->string('page_number', 4); //Which page is the article located
+            $table->string('picture_url', 255)->nullable(); //picture
             //We could group main articles to give them more importance
-            $table->boolean('is_main'); //is one of the main magazine articles?
+            $table->boolean('is_main')->default(0); //is one of the main magazine articles?
             //Authors are in pivot table
             //$table->text('content'); //To be implemented after release 1
 			$table->timestamps();
-            $table->foreign('magazine_id')->references('issues')->on('magazines');
             $table->foreign('section_id')->references('id')->on('sections');
-		});
+            $table->foreign('magazine_id')->references('id')->on('magazines');
+        });
 	}
 
 	/**

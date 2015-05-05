@@ -14,15 +14,14 @@ class CreateMagazinesTable extends Migration {
 	{
         Schema::create('magazines', function(Blueprint $table) {
 
-            $table->string('issue')->unique();
+            $table->increments('id');
+            $table->string('issue');
             $table->text('summary')->nullable(); //Text published in 10 years ago section
             $table->date('fromDate'); //Data issued
             $table->date('toDate');
             $table->tinyInteger('year')->unsigned();
             //Media will be managed by another table (tapa, pdfs)
-
             // Timestamps
-            $table->primary('issue'); //Set primary key for issue property
             $table->timestamps();
         });
 	}
@@ -32,12 +31,9 @@ class CreateMagazinesTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
-        Schema::table('magazines', function(Blueprint $table)
-        {
-            Schema::drop('magazines');
-        });
-	}
+    public function down()
+    {
+        Schema::drop('magazines');
+    }
 
 }

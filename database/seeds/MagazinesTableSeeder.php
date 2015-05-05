@@ -17,3 +17,17 @@ class MagazinesTableSeeder extends Seeder {
     }
 
 }
+
+
+/*
+ * public function run()
+{
+    DB::table('alpha')->delete();
+
+    Alpha::create( array(
+        'all'           =>  'all',
+        'your'          =>  'your',
+        'stuff'         =>  'stuff',
+    ) )->beta()->attach( $idOfYourBeta );
+}
+ */

@@ -13,6 +13,11 @@ class Magazine extends Model implements PresenterInterface{
     //Convert this two properties to Carbon instances
     protected $dates = ['fromDate', 'toDate'];
 
+    //Relationship
+    public function articles() {
+        return $this->hasMany('\Batango\entities\Article');
+    }
+
     //Prevent massive assignment
     protected $fillable = [
         'issue',
