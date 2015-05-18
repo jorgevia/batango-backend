@@ -13,7 +13,6 @@ class CreateArticleAuthorTable extends Migration {
 	public function up()
     {
 		Schema::create('article_author', function(Blueprint $table) {
-
             $table->increments('id');
             $table->integer('article_id')->unsigned();
             $table->integer('author_id')->unsigned();

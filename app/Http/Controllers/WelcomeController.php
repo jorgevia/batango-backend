@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 use \Batango\entities\Magazine;
+use \Batango\entities\Article;
+use Batango\entities\Section;
 use \Carbon\Carbon;
 
 
@@ -33,23 +35,9 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-        $magazines = Magazine::all();
-        return view('batango.bat', compact('magazines'));
+        $article = Article::find(1)->with('magazine', 'section')->get()->toArray()[0];
+        dd($article['magazine']['issue'], $article['section']['description']);
+        //return view('batango.bat', compact('magazines'));
 	}
 
 }
-
-/*
-
-array:1 [
-  0 => array:7 [
-    "issue" => "216"
-    "summary" => null
-    "fromDate" => "2013-11-01 00:00:00"
-    "toDate" => "2014-02-28 00:00:00"
-    "year" => 19
-    "created_at" => "2015-05-01 23:53:03"
-    "updated_at" => "2015-05-01 23:53:03"
-  ]
-]
-*/

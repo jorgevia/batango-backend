@@ -9,11 +9,11 @@ class Article extends Model {
     //protected $presenter = 'Batango\presenters\Magazine';
 
     //Relationship
-    public function magazines() {
+    public function magazine() {
         return $this->belongsTo('\Batango\entities\Magazine');
     }
 
-    public function sections() {
+    public function section() {
         return $this->belongsTo('\Batango\entities\Section');
     }
 
